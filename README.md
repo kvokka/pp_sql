@@ -1,6 +1,6 @@
 # PpSql
 
-Replace stanpard `ActieRecord#to_sql` method with [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
+Replace standard `ActiveRecord#to_sql` method with [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
 gem for pretty SQL code output in console. For example:
 ```
 # was
@@ -21,7 +21,7 @@ SELECT
 Post.first.to_sql
 ```
 
-If you need yo use it in some custome strings, you may include this funcional with
+If you need yo use it in some custom strings, you may include this funcionality with
 
 ```
 String.send :include, PpSql::ToSqlBeautify
