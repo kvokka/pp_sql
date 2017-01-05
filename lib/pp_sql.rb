@@ -4,6 +4,10 @@ module PpSql
       _sql_formatter.format(super)
     end
 
+    def pp_sql
+      puts to_sql
+    end
+
     private
 
     def _sql_formatter

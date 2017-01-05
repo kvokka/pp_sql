@@ -44,7 +44,7 @@ $ bundle
 ## With other formatters
 
 If you are `pry` user, or use custom output formatter, use `puts` for output whitespaces, 
-like `puts User.all.to_sql`
+like `puts User.all.to_sql`, or use `User.all.pp_sql`
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
