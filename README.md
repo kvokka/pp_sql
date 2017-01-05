@@ -21,7 +21,7 @@ SELECT
 Post.first.to_sql
 ```
 
-If you need yo use it in some custome strings, you may include this funcional with
+If you need yo use it in some custom strings, you may include this funcional with
 
 ```
 String.send :include, PpSql::ToSqlBeautify
