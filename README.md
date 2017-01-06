@@ -1,6 +1,6 @@
 # PpSql
 
-Replace stanpard `ActiveRecord#to_sql` method with [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
+Replace standard `ActiveRecord#to_sql` method with [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
 gem for pretty SQL code output in console. Rails log will be formatted also. Example output:
 
 ![log](http://savepic.ru/12566050.png)
