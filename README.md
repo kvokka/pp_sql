@@ -1,6 +1,7 @@
 # PpSql
 
-Replace standard `ActiveRecord#to_sql` method with [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
+Replace stanpard `ActiveRecord#to_sql` method with [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
+gem for pretty SQL code output in console. Rails log will be formatted also. For example:
 
 ```
 # was
@@ -14,6 +15,10 @@ SELECT
   FROM
     `users`
 ```
+
+## Require
+
+Ruby 2.0+
 
 ## Usage
 
