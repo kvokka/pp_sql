@@ -3,11 +3,11 @@
 Replace stanpard `ActiveRecord#to_sql` method with [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
 gem for pretty SQL code output in console. Rails log will be formatted also. Example output:
 
-![log](https://github.com/kvokka/pp_sql)
+![log](http://savepic.ru/12566050.png)
 
 Or in console
 
-![console] (https://github.com/kvokka/pp_sql)
+![console] (http://savepic.ru/12578341.png)
 
 ## Require
 
