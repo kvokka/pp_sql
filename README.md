@@ -1,7 +1,7 @@
 # PpSql
 
 Replace standard `ActiveRecord#to_sql` method with [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
-gem for pretty SQL code output in console. For example:
+
 ```
 # was
 User.all # => 
