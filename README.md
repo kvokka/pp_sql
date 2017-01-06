@@ -1,20 +1,13 @@
 # PpSql
 
 Replace stanpard `ActiveRecord#to_sql` method with [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
-gem for pretty SQL code output in console. Rails log will be formatted also. For example:
+gem for pretty SQL code output in console. Rails log will be formatted also. Example output:
 
-```
-# was
-User.all # => 
-"SELECT `users`. * FROM `users`"
+![log](https://github.com/kvokka/pp_sql)
 
-# thus
-# =>
-SELECT
-    `users`. *
-  FROM
-    `users`
-```
+Or in console
+
+![console] (https://github.com/kvokka/pp_sql)
 
 ## Require
 
