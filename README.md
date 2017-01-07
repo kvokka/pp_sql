@@ -31,7 +31,7 @@ and use formatter with any String.
 
 add in Gemfile
 ```
-gem 'pp_sql', group :development
+gem 'pp_sql', group: :development
 ```
 
 And then execute:
