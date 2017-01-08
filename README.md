@@ -11,7 +11,7 @@ Or in console
 
 ## Require
 
-Ruby 2.0+
+Ruby 2.2+
 
 ## Usage
 
