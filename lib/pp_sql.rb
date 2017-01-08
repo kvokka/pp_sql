@@ -71,7 +71,7 @@ module PpSql
 
       unless (payload[:binds] || []).empty?
         binds = "  " + payload[:binds].map do |*args|
-          method(:render_bind).arity.one? ? render_bind(args.first) : render_bind(*args)
+          method(:render_bind).arity == 1 ? render_bind(args.first) : render_bind(*args)
         end.inspect
       end
 
