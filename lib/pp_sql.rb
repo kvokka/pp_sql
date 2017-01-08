@@ -22,8 +22,10 @@ module PpSql
       puts to_sql
     end
   end
-  module Rails5PpSqlPort
+  module Rails5PpSqlExtraction
     # export from Rails 5 with for Rails 4.2+ versions
+    private
+
     def colorize_payload_name(name, payload_name)
       if payload_name.blank? || payload_name == "SQL" # SQL vs Model Load/Exists
         color(name, ActiveSupport::LogSubscriber::MAGENTA, true)
@@ -85,7 +87,7 @@ module PpSql
       ActiveSupport.on_load(:active_record) do
         ActiveRecord::Relation.send(:prepend, ToSqlBeautify)
         ActiveRecord::LogSubscriber.send(:prepend, LogSubscriberPrettyPrint)
-        ActiveRecord::LogSubscriber.send(:include, Rails5PpSqlPort) if Rails::VERSION::MAJOR <= 4
+        ActiveRecord::LogSubscriber.send(:include, Rails5PpSqlExtraction) if Rails::VERSION::MAJOR <= 4
       end
     end
   end
