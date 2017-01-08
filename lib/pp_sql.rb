@@ -22,11 +22,41 @@ module PpSql
       puts to_sql
     end
   end
+  module Rails5PpSqlPort
+    # export from Rails 5 with for Rails 4.2+ versions
+    def colorize_payload_name(name, payload_name)
+      if payload_name.blank? || payload_name == "SQL" # SQL vs Model Load/Exists
+        color(name, ActiveSupport::LogSubscriber::MAGENTA, true)
+      else
+        color(name, ActiveSupport::LogSubscriber::CYAN, true)
+      end
+    end
+
+    def sql_color(sql)
+      case sql
+        when /\A\s*rollback/mi
+          ActiveSupport::LogSubscriber::RED
+        when /select .*for update/mi, /\A\s*lock/mi
+          ActiveSupport::LogSubscriber::WHITE
+        when /\A\s*select/i
+          ActiveSupport::LogSubscriber::BLUE
+        when /\A\s*insert/i
+          ActiveSupport::LogSubscriber::GREEN
+        when /\A\s*update/i
+          ActiveSupport::LogSubscriber::YELLOW
+        when /\A\s*delete/i
+          ActiveSupport::LogSubscriber::RED
+        when /transaction\s*\Z/i
+          ActiveSupport::LogSubscriber::CYAN
+        else
+          ActiveSupport::LogSubscriber::MAGENTA
+      end
+    end
+  end
   module LogSubscriberPrettyPrint
     include Formatter
     def sql(event)
       return unless logger.debug?
-
       self.class.runtime += event.duration
 
       payload = event.payload
@@ -38,7 +68,9 @@ module PpSql
       binds = nil
 
       unless (payload[:binds] || []).empty?
-        binds = "  " + payload[:binds].map { |attr| render_bind(attr) }.inspect
+        binds = "  " + payload[:binds].map do |*args|
+          method(:render_bind).arity.one? ? render_bind(args.first) : render_bind(*args)
+        end.inspect
       end
 
       name = colorize_payload_name(name, payload[:name])
@@ -53,6 +85,7 @@ module PpSql
       ActiveSupport.on_load(:active_record) do
         ActiveRecord::Relation.send(:prepend, ToSqlBeautify)
         ActiveRecord::LogSubscriber.send(:prepend, LogSubscriberPrettyPrint)
+        ActiveRecord::LogSubscriber.send(:include, Rails5PpSqlPort) if Rails::VERSION::MAJOR <= 4
       end
     end
   end
