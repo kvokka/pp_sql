@@ -19,7 +19,7 @@ Ruby 2.2+
 Post.first.to_sql
 ```
 
-If you need yo use it in some custom strings, you may include this funcionality with
+If you need to use it in some custom strings, you may include this functionality with
 
 ```
 String.send :include, PpSql::ToSqlBeautify
