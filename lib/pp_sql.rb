@@ -15,7 +15,7 @@ module PpSql
   module ToSqlBeautify
     include Formatter
     def to_sql
-      _sql_formatter.format(super)
+      _sql_formatter.format(super.dup)
     end
 
     def pp_sql
