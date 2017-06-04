@@ -1,4 +1,10 @@
 module PpSql
+  # class << self
+    # if you do not want to rewrite AR native method #to_sql
+    # you may switch this setting to false in initializer
+    mattr_accessor :rewrite_to_sql_method
+    self.rewrite_to_sql_method = true
+  # end
   module Formatter
     private
 
@@ -15,6 +21,7 @@ module PpSql
   module ToSqlBeautify
     include Formatter
     def to_sql
+      return super unless ::PpSql.rewrite_to_sql
       _sql_formatter.format(defined?(super) ? super.dup : self)
     end
 
