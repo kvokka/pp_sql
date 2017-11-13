@@ -60,33 +60,16 @@ module PpSql
       end
     end
   end
+  
   module LogSubscriberPrettyPrint
     include Formatter
     def sql(event)
-      return unless logger.debug?
-      self.class.runtime += event.duration
-
-      payload = event.payload
-
-      return if ActiveRecord::LogSubscriber::IGNORE_PAYLOAD_NAMES.include?(payload[:name])
-
-      name  = "#{payload[:name]} (#{event.duration.round(1)}ms)"
-      sql   = payload[:sql]
-      binds = nil
-
-      unless (payload[:binds] || []).empty?
-        binds = "  " + payload[:binds].map do |*args|
-          method(:render_bind).arity == 1 ? render_bind(args.first) : render_bind(*args)
-        end.inspect
-      end
-
-      name = colorize_payload_name(name, payload[:name])
-      # only this line was rewritten from the AR
-      sql  = color(_sql_formatter.format(sql.dup), sql_color(sql), true)
-
-      debug "  #{name}  #{sql}#{binds}"
+      e=  event.dup
+      e.payload[:sql] = _sql_formatter.format(e.payload[:sql].dup)
+      super e
     end
   end
+
   class Railtie < Rails::Railtie
     initializer "pp_sql.override_to_sql" do
       ActiveSupport.on_load(:active_record) do
