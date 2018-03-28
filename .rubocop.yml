@@ -1,0 +1,6 @@
+Metrics/LineLength:
+  Max: 120
+Style/Documentation:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Max: 10
