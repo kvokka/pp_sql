@@ -19,13 +19,19 @@ Ruby 2.2+
 Post.first.to_sql
 ```
 
-If you need to use it in some custom strings, you may include this functionality with
+for easy and clean usage with custom string you can use build-in refinement:
 
 ```
-String.send :include, PpSql::ToSqlBeautify
+  using PpSql::ToSqlBeautifyRefinement
 ```
 
-and use formatter with any String.
+Or if you need to use it wider
+
+```
+class MyAwesomeDecoratedString < String
+  include PpSql::ToSqlBeautify
+end
+```
 
 ## Installation
 

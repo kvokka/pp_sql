@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PpSql
   # if you do not want to rewrite AR native method #to_sql
   # you may switch this setting to false in initializer
@@ -8,7 +10,7 @@ module PpSql
     private
 
     def _sql_formatter
-      return @_sql_formatter if @_sql_formatter
+      return @_sql_formatter if defined?(@_sql_formatter) && @_sql_formatter
       require 'anbt-sql-formatter/formatter'
       rule = AnbtSql::Rule.new
       rule.keyword = AnbtSql::Rule::KEYWORD_UPPER_CASE
@@ -19,14 +21,21 @@ module PpSql
   end
 
   module ToSqlBeautify
-    include Formatter
     def to_sql
+      return self  unless ::PpSql.rewrite_to_sql_method || defined?(super)
       return super unless ::PpSql.rewrite_to_sql_method
-      _sql_formatter.format(defined?(super) ? super.dup : self)
+      extend Formatter
+      _sql_formatter.format(defined?(super) ? super.dup : dup)
     end
 
     def pp_sql
       puts to_sql
+    end
+  end
+
+  module ToSqlBeautifyRefinement
+    refine String do
+      include PpSql::ToSqlBeautify
     end
   end
 
