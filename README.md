@@ -15,6 +15,10 @@ Or in console
 
 Ruby 2.2+
 
+## Rails
+
+Rails 4.0+ (optional), will be injected automatically
+
 ## Usage
 
 ```
