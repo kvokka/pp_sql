@@ -8,7 +8,6 @@ module PpSql
   end
   self.rewrite_to_sql_method = true
 
-
   module Formatter
     private
 

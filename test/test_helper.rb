@@ -6,4 +6,3 @@ require 'pp_sql'
 
 require 'minitest/reporters'
 Minitest::Reporters.use!
-
