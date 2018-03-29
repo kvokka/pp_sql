@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 # Declare your gem's dependencies in pp_sql.gemspec.
@@ -12,3 +14,5 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+#
+gem 'anbt-sql-formatter', github: 'kvokka/anbt-sql-formatter'
