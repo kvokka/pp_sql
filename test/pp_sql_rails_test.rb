@@ -1,19 +1,23 @@
 # frozen_string_literal: true
 
+require 'rails'
 require 'test_helper'
-
-TeatApp::Application.initialize!
-
 require 'active_record'
 require 'sqlite3'
+ENV['RAILS_ENV'] = 'test'
 
-ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
-
-ActiveRecord::Base.connection.create_table(:users) do |t|
-  t.string :name
+module TeatApp
+  class Application < Rails::Application
+    config.eager_load = false
+    initialize!
+  end
 end
 
-ActiveRecord::Base.logger = Logger.new(LOGGER = StringIO.new)
+class ActiveRecord::Base
+  establish_connection(adapter: 'sqlite3', database: ':memory:')
+  connection.create_table(:users) { |t| t.string :name }
+  self.logger = Logger.new(::LOGGER = StringIO.new)
+end
 
 class User < ActiveRecord::Base; end
 

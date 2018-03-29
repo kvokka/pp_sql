@@ -3,8 +3,11 @@
 module PpSql
   # if you do not want to rewrite AR native method #to_sql
   # you may switch this setting to false in initializer
-  mattr_accessor :rewrite_to_sql_method
+  class << self
+    attr_accessor :rewrite_to_sql_method
+  end
   self.rewrite_to_sql_method = true
+
 
   module Formatter
     private
@@ -74,12 +77,14 @@ module PpSql
     end
   end
 
-  class Railtie < Rails::Railtie
-    initializer 'pp_sql.override_to_sql' do
-      ActiveSupport.on_load(:active_record) do
-        ActiveRecord::Relation.send(:prepend, ToSqlBeautify)
-        ActiveRecord::LogSubscriber.send(:prepend, LogSubscriberPrettyPrint)
-        ActiveRecord::LogSubscriber.send(:include, Rails5PpSqlExtraction) if Rails::VERSION::MAJOR <= 4
+  if defined?(::Rails::Railtie)
+    class Railtie < Rails::Railtie
+      initializer 'pp_sql.override_to_sql' do
+        ActiveSupport.on_load(:active_record) do
+          ActiveRecord::Relation.send(:prepend, ToSqlBeautify)
+          ActiveRecord::LogSubscriber.send(:prepend, LogSubscriberPrettyPrint)
+          ActiveRecord::LogSubscriber.send(:include, Rails5PpSqlExtraction) if Rails::VERSION::MAJOR <= 4
+        end
       end
     end
   end
