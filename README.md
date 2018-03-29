@@ -1,4 +1,4 @@
-# PpSql [![Build Status](https://travis-ci.org/kvokka/pp_sql?branch=master)](https://travis-ci.org/kvokka/pp_sql)
+# PpSql [![Build Status](https://travis-ci.org/kvokka/pp_sql.svg?branch=master)](https://travis-ci.org/kvokka/pp_sql)
 
 Replace standard `ActiveRecord#to_sql` method with 
 [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
