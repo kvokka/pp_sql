@@ -1,13 +1,15 @@
 # PpSql
 
-Replace standard `ActiveRecord#to_sql` method with [`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
-gem for pretty SQL code output in console. Rails log will be formatted also. Example output:
+Replace standard `ActiveRecord#to_sql` method with 
+[`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
+gem for pretty SQL code output in console. Rails log will be formatted also. 
+Example output:
 
-![log](http://savepic.ru/12566050.png)
+![log](https://raw.githubusercontent.com/kvokka/pp_sql/master/screenshots/log.png)
 
 Or in console
 
-![console] (http://savepic.ru/12578341.png)
+![console](https://raw.githubusercontent.com/kvokka/pp_sql/master/screenshots/console.png)
 
 ## Require
 
@@ -52,7 +54,9 @@ like `puts User.all.to_sql`, or use `User.all.pp_sql`.
 
 ## With Rails
 
-If you do not want to rewrite default `#to_sql` method you may specify `PpSql.rewrite_to_sql_method=false` in initializers.
+If you do not want to rewrite default `#to_sql` method you may specify
+ `PpSql.rewrite_to_sql_method=false` in initializers.
 
 ## License
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the 
+[MIT License](http://opensource.org/licenses/MIT).
