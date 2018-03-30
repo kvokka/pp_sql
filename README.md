@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ce0bc4b657ca4185906c600eda9c6add)](https://app.codacy.com/app/kvokka/pp_sql?utm_source=github.com&utm_medium=referral&utm_content=kvokka/pp_sql&utm_campaign=badger)
 # PpSql [![Build Status](https://travis-ci.org/kvokka/pp_sql.svg?branch=master)](https://travis-ci.org/kvokka/pp_sql)
 
 Replace standard `ActiveRecord#to_sql` method with 
