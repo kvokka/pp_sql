@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir['lib/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  s.add_dependency 'anbt-sql-formatter', '~> 0.0.5', '~> 0.0.5'
+  s.add_dependency 'anbt-sql-formatter', '~> 0.0.6', '~> 0.0.6'
   s.add_dependency 'rails'
 
   s.add_development_dependency 'appraisal'
