@@ -63,6 +63,18 @@ like `puts User.all.to_sql`, or use `User.all.pp_sql`.
 If you do not want to rewrite default `#to_sql` method you may specify
  `PpSql.rewrite_to_sql_method=false` in initializers.
 
+ ### Add to Application record
+
+I sound usefull this trick:
+
+ ```
+ class ApplicationRecord < ActiveRecord::Base
+  include PpSql::ToSqlBeautify if defined?(Rails::Console)
+
+  self.abstract_class = true
+end
+```
+
 ## License
 The gem is available as open source under the terms of the 
 [MIT License](http://opensource.org/licenses/MIT).
