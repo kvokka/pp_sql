@@ -24,9 +24,9 @@ end
 class User < ActiveRecord::Base; end
 
 describe PpSql do
-  after { clear_logs! }
+  after { clear_logs! && set_default_config! }
 
-  it 'load with right output' do
+  it 'load with formatted output' do
     User.create
     assert(LOGGER.string.lines.detect { |line| line =~ /INTO\n/ })
     clear_logs!
@@ -34,9 +34,21 @@ describe PpSql do
     assert_equal LOGGER.string.lines.count, 6
   end
 
+  it 'load with default output' do
+    PpSql.add_rails_logger_formatting = false
+    User.create
+    clear_logs!
+    User.first
+    assert_equal LOGGER.string.lines.count, 1
+  end
+
   private
 
   def clear_logs!
     LOGGER.string.clear
+  end
+
+  def set_default_config!
+    PpSql.add_rails_logger_formatting = true
   end
 end
