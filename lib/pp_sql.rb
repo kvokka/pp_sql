@@ -5,8 +5,10 @@ module PpSql
   # you may switch this setting to false in initializer
   class << self
     attr_accessor :rewrite_to_sql_method
+    attr_accessor :add_rails_logger_formatting
   end
   self.rewrite_to_sql_method = true
+  self.add_rails_logger_formatting = true
 
   module Formatter
     private
@@ -72,7 +74,10 @@ module PpSql
 
   module LogSubscriberPrettyPrint
     include Formatter
+
     def sql(event)
+      return super event unless ::PpSql.add_rails_logger_formatting
+
       e = event.dup
       e.payload[:sql] = _sql_formatter.format(e.payload[:sql].dup)
       super e
