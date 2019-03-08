@@ -13,6 +13,7 @@ module PpSql
 
     def _sql_formatter
       return @_sql_formatter if defined?(@_sql_formatter) && @_sql_formatter
+
       require 'anbt-sql-formatter/formatter'
       rule = AnbtSql::Rule.new
       rule.keyword = AnbtSql::Rule::KEYWORD_UPPER_CASE
@@ -26,6 +27,7 @@ module PpSql
     def to_sql
       return self  unless ::PpSql.rewrite_to_sql_method || defined?(super)
       return super unless ::PpSql.rewrite_to_sql_method
+
       extend Formatter
       _sql_formatter.format(defined?(super) ? super.dup : dup)
     end
@@ -43,6 +45,7 @@ module PpSql
 
   module Rails5PpSqlExtraction
     # export from Rails 5 with for Rails 4.2+ versions
+
     private
 
     def colorize_payload_name(name, payload_name)
