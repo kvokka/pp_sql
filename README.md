@@ -69,7 +69,7 @@ in initializers.
 
  ### Add to Application record
 
-I sound usefull this trick:
+I found usefull this trick:
 
  ```
  class ApplicationRecord < ActiveRecord::Base
