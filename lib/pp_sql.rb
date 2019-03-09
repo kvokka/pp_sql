@@ -5,14 +5,17 @@ module PpSql
   # you may switch this setting to false in initializer
   class << self
     attr_accessor :rewrite_to_sql_method
+    attr_accessor :add_rails_logger_formatting
   end
   self.rewrite_to_sql_method = true
+  self.add_rails_logger_formatting = true
 
   module Formatter
     private
 
     def _sql_formatter
       return @_sql_formatter if defined?(@_sql_formatter) && @_sql_formatter
+
       require 'anbt-sql-formatter/formatter'
       rule = AnbtSql::Rule.new
       rule.keyword = AnbtSql::Rule::KEYWORD_UPPER_CASE
@@ -26,6 +29,7 @@ module PpSql
     def to_sql
       return self  unless ::PpSql.rewrite_to_sql_method || defined?(super)
       return super unless ::PpSql.rewrite_to_sql_method
+
       extend Formatter
       _sql_formatter.format(defined?(super) ? super.dup : dup)
     end
@@ -43,6 +47,7 @@ module PpSql
 
   module Rails5PpSqlExtraction
     # export from Rails 5 with for Rails 4.2+ versions
+
     private
 
     def colorize_payload_name(name, payload_name)
@@ -69,7 +74,10 @@ module PpSql
 
   module LogSubscriberPrettyPrint
     include Formatter
+
     def sql(event)
+      return super event unless ::PpSql.add_rails_logger_formatting
+
       e = event.dup
       e.payload[:sql] = _sql_formatter.format(e.payload[:sql].dup)
       super e
