@@ -16,11 +16,15 @@ Or in console
 
 ## Require
 
-Ruby 2.2+
+Ruby 2.4+
 
 ## Rails
 
-Rails 4.0+ (optional), will be injected automatically
+Rails 4.2+ (optional), will be injected automatically
+
+## Legacy
+
+You can use version `~> 0.2` of this gem with Ruby 2.2, 2.3 and/or Rails 4.0, 4.1
 
 ## Usage
 
