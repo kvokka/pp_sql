@@ -1,35 +1,20 @@
 language: ruby
+install: bundle --without local_development --jobs=3 --retry=3
+cache: bundler
 rvm:
-  - 2.2
-  - 2.3
   - 2.4
   - 2.5
   - 2.6
 
 gemfile:
-  - gemfiles/rails_4_0.gemfile
-  - gemfiles/rails_4_1.gemfile
   - gemfiles/rails_4_2.gemfile
   - gemfiles/rails_5.gemfile
   - gemfiles/rails_5_1.gemfile
+  - gemfiles/activerecord_5_2.gemfile
 
 matrix:
    exclude:
-     - rvm: 2.3
-       gemfile: gemfiles/rails_4_0.gemfile
-     - rvm: 2.3
-       gemfile: gemfiles/rails_4_1.gemfile
-     - rvm: 2.3
+     - rvm: 2.4
        gemfile: gemfiles/rails_4_2.gemfile
-     - rvm: 2.4
-       gemfile: gemfiles/rails_4_0.gemfile
-     - rvm: 2.4
-       gemfile: gemfiles/rails_4_1.gemfile
      - rvm: 2.5
-       gemfile: gemfiles/rails_4_0.gemfile
-     - rvm: 2.5
-       gemfile: gemfiles/rails_4_1.gemfile
-     - rvm: 2.6
-       gemfile: gemfiles/rails_4_0.gemfile
-     - rvm: 2.6
-       gemfile: gemfiles/rails_4_1.gemfile
+       gemfile: gemfiles/rails_4_2.gemfile
