@@ -15,3 +15,11 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 #
+group :local_development do
+  gem 'appraisal'
+  gem 'overcommit'
+  gem 'pry'
+  gem 'rails', '~> 5.2.0'
+  gem 'reek'
+  gem 'rubocop', '~> 0.71.0'
+end
