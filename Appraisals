@@ -19,7 +19,7 @@ appraise 'rails-5-2' do
   gem 'sqlite3', '~> 1.4'
 end
 
-apparise 'activerecord-5-2' do
+appraise 'activerecord-5-2' do
   gem 'activerecord', '~> 5.2.0'
   gem 'rake'
   gem 'sqlite3', '~> 1.4'
