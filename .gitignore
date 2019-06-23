@@ -3,3 +3,4 @@ log/*.log
 Gemfile.lock
 *.gem
 gemfiles/*.gemfile.lock
+gemfiles/.bundle/
