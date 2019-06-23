@@ -4,3 +4,6 @@ Style/Documentation:
   Enabled: false
 Metrics/CyclomaticComplexity:
   Max: 10
+AllCops:
+  Exclude:
+    - 'gemfiles/**/*'
