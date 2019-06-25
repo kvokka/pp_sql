@@ -8,11 +8,11 @@ Replace standard `ActiveRecord#to_sql` method with
 gem for pretty SQL code output in console. Rails log will be formatted also.
 Example output:
 
-![log](https://raw.githubusercontent.com/kvokka/pp_sql/master/screenshots/log.png)
+![log](https://raw.githubusercontent.com/kvokka/pp_sql/master/img/log.png)
 
 Or in console
 
-![console](https://raw.githubusercontent.com/kvokka/pp_sql/master/screenshots/console.png)
+![console](https://raw.githubusercontent.com/kvokka/pp_sql/master/img/console.png)
 
 ## Require
 
@@ -82,6 +82,10 @@ I found usefull this trick:
   self.abstract_class = true
 end
 ```
+
+### Supported by
+
+[![jetbrains](https://raw.githubusercontent.com/kvokka/pp_sql/master/img/jetbrains-variant-3.svg?sanitize=true)](https://www.jetbrains.com/?from=pp_sql)
 
 ## License
 The gem is available as open source under the terms of the
