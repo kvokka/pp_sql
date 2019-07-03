@@ -1,18 +1,20 @@
 # PpSql
-[![Build Status](https://travis-ci.org/kvokka/pp_sql.svg?branch=master)](https://travis-ci.org/kvokka/pp_sql)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7c866da60b1b4dd78eacc379cc0e7f3b)](https://www.codacy.com/app/kvokka/pp_sql?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kvokka/pp_sql&amp;utm_campaign=Badge_Grade)
-[![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
+
+[![Version               ][rubygems_badge]][rubygems]
+[![Build Status          ][travisci_badge]][travisci]
+[![Codacy Badge          ][codacy_badge]][codacy]
+[![Reviewed by Hound     ][hound_badge]][hound]
 
 Replace standard `ActiveRecord#to_sql` method with
-[`anbt-sql-formatter`](https://github.com/sonota88/anbt-sql-formatter)
+[`anbt-sql-formatter`][anbt-sql-formatter-link]
 gem for pretty SQL code output in console. Rails log will be formatted also.
 Example output:
 
-![log](https://raw.githubusercontent.com/kvokka/pp_sql/master/img/log.png)
+![log][log-img]
 
 Or in console
 
-![console](https://raw.githubusercontent.com/kvokka/pp_sql/master/img/console.png)
+![console][console-img]
 
 ## Require
 
@@ -85,8 +87,25 @@ end
 
 ### Supported by
 
-[![jetbrains](https://raw.githubusercontent.com/kvokka/pp_sql/master/img/jetbrains-variant-3.svg?sanitize=true)](https://www.jetbrains.com/?from=pp_sql)
+[![jetbrains][jetbrains-img-link]][jetbrains-link]
 
 ## License
 The gem is available as open source under the terms of the
-[MIT License](http://opensource.org/licenses/MIT).
+[MIT License][mit-licence-link].
+
+[rubygems_badge]: http://img.shields.io/gem/v/pp_sql.svg
+[rubygems]: https://rubygems.org/gems/pp_sql
+[travisci_badge]: https://travis-ci.org/kvokka/pp_sql.svg?branch=master
+[travisci]: https://travis-ci.org/kvokka/pp_sql
+[codacy_badge]: https://api.codacy.com/project/badge/Grade/7c866da60b1b4dd78eacc379cc0e7f3b
+[codacy]: https://www.codacy.com/app/kvokka/pp_sql?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kvokka/pp_sql&amp;utm_campaign=Badge_Grade
+[hound_badge]: https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg
+[hound]: https://houndci.com
+
+[anbt-sql-formatter-link]: https://github.com/sonota88/anbt-sql-formatter
+[mit-licence-link]: http://opensource.org/licenses/MIT
+[jetbrains-link]: https://www.jetbrains.com/?from=pp_sql
+[jetbrains-img-link]: https://raw.githubusercontent.com/kvokka/pp_sql/master/img/jetbrains-variant-3.svg?sanitize=true
+
+[log-img]: https://raw.githubusercontent.com/kvokka/pp_sql/master/img/log.png
+[console-img]: https://raw.githubusercontent.com/kvokka/pp_sql/master/img/console.png
