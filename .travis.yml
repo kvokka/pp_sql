@@ -11,11 +11,17 @@ gemfile:
   - gemfiles/rails_5.gemfile
   - gemfiles/rails_5_1.gemfile
   - gemfiles/rails_5_2.gemfile
+  - gemfiles/rails_6_0.gemfile
   - gemfiles/activerecord_5_2.gemfile
+  - gemfiles/activerecord_6_0.gemfile
 
 matrix:
-   exclude:
-     - rvm: 2.4
-       gemfile: gemfiles/rails_4_2.gemfile
-     - rvm: 2.5
-       gemfile: gemfiles/rails_4_2.gemfile
+  exclude:
+    - rvm: 2.4
+      gemfile: gemfiles/rails_4_2.gemfile
+    - rvm: 2.5
+      gemfile: gemfiles/rails_4_2.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/rails_6_0.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/activerecord_6_0.gemfile
