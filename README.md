@@ -68,7 +68,8 @@ like `puts User.all.to_sql`, or use `User.all.pp_sql`.
 ## With Rails
 
 If you do not want to rewrite default `#to_sql` method you may specify
- `PpSql.rewrite_to_sql_method=false` in initializers.
+ `PpSql.rewrite_to_sql_method=false` in initializers. The `#pp_sql` method will still be
+ available (for example, for use in the console).
 
 You can also disable log formatting by specifying `PpSql.add_rails_logger_formatting=false`
 in initializers.
