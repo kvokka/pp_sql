@@ -11,17 +11,12 @@ describe PpSql do
 
   after { PpSql.rewrite_to_sql_method = true }
 
-  it 'will format provided sql by default' do
+  it 'will parse provided sql' do
     assert_equal str.to_sql.lines.count, 4
   end
 
-  it 'will turn off rewriting to_sql' do
+  it 'throw string as is' do
     PpSql.rewrite_to_sql_method = false
     assert_equal str.to_sql.lines.count, 1
-  end
-
-  it 'will continue to format with pp_sql' do
-    PpSql.rewrite_to_sql_method = false
-    assert_equal str.pp_sql.lines.count, 4
   end
 end
