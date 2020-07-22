@@ -11,12 +11,29 @@ describe PpSql do
 
   after { PpSql.rewrite_to_sql_method = true }
 
-  it 'will parse provided sql' do
+  it 'parses provided sql' do
     assert_equal str.to_sql.lines.count, 4
   end
 
-  it 'throw string as is' do
+  it 'returns string as is' do
     PpSql.rewrite_to_sql_method = false
     assert_equal str.to_sql.lines.count, 1
+  end
+
+  it 'formats and prints with pp_sql' do
+    out, _ = capture_io do
+      str.pp_sql
+    end
+
+    assert_equal out, "SELECT\n    COUNT( * )\n  FROM\n    \"users\"\n"
+  end
+
+  it 'formats and prints with pp_sql if rewrite_to_sql_method is false' do
+    PpSql.rewrite_to_sql_method = false
+    out, _ = capture_io do
+      str.pp_sql
+    end
+
+    assert_equal out, "SELECT\n    COUNT( * )\n  FROM\n    \"users\"\n"
   end
 end
