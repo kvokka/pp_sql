@@ -21,7 +21,7 @@ describe PpSql do
   end
 
   it 'formats and prints with pp_sql' do
-    out, _ = capture_io do
+    out, = capture_io do
       str.pp_sql
     end
 
