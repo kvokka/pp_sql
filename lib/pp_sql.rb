@@ -27,21 +27,15 @@ module PpSql
 
   module ToSqlBeautify
     def to_sql
-      if ::PpSql.rewrite_to_sql_method
-        extend Formatter
-        _sql_formatter.format(defined?(super) ? super.dup : dup)
-      else
-        defined?(super) ? super : self
-      end
+      return self  unless ::PpSql.rewrite_to_sql_method || defined?(super)
+      return super unless ::PpSql.rewrite_to_sql_method
+
+      extend Formatter
+      _sql_formatter.format(defined?(super) ? super.dup : dup)
     end
 
     def pp_sql
-      if ::PpSql.rewrite_to_sql_method
-        puts to_sql
-      else
-        extend Formatter
-        puts _sql_formatter.format(to_sql.to_s)
-      end
+      puts to_sql
     end
   end
 
