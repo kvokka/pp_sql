@@ -48,7 +48,7 @@ describe PpSql do
 
   it 'pp_sql formats a relation properly' do
     User.create
-    out, _ = capture_io do
+    out, = capture_io do
       User.all.pp_sql
     end
     assert_equal out, "SELECT\n    \"users\" . *\n  FROM\n    \"users\"\n"

@@ -30,7 +30,7 @@ describe PpSql do
 
   it 'formats and prints with pp_sql if rewrite_to_sql_method is false' do
     PpSql.rewrite_to_sql_method = false
-    out, _ = capture_io do
+    out, = capture_io do
       str.pp_sql
     end
 
