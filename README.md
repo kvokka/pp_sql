@@ -89,6 +89,11 @@ end
 
 [![jetbrains][jetbrains-img-link]][jetbrains-link]
 
+## Contributing
+
+Running the tests requires sqlite. To run the tests for different combinations of dependency
+versions, run `bundle exec appraisal install` followed by `bundle exec appraisal rake`.
+
 ## License
 The gem is available as open source under the terms of the
 [MIT License][mit-licence-link].
