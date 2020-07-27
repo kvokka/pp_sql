@@ -41,6 +41,19 @@ describe PpSql do
     assert_equal LOGGER.string.lines.count, 1
   end
 
+  it 'to_sql formats a relation properly' do
+    User.create
+    assert_equal User.all.to_sql, "SELECT\n    \"users\" . *\n  FROM\n    \"users\""
+  end
+
+  it 'pp_sql formats a relation properly' do
+    User.create
+    out, = capture_io do
+      User.all.pp_sql
+    end
+    assert_equal out, "SELECT\n    \"users\" . *\n  FROM\n    \"users\"\n"
+  end
+
   private
 
   def clear_logs!

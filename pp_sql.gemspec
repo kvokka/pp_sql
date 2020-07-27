@@ -25,5 +25,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'minitest-focus'
   s.add_development_dependency 'minitest-reporters'
   s.add_development_dependency 'rails', '>= 4.2'
-  s.add_development_dependency 'sqlite3', '~> 1.3.6'
+  s.add_development_dependency 'sqlite3', '>= 1.3.6'
 end
