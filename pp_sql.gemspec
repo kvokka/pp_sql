@@ -19,11 +19,11 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'activerecord'
-  s.add_dependency 'anbt-sql-formatter', '~> 0.0.6', '~> 0.0.6'
+  s.add_dependency 'anbt-sql-formatter', '~> 0.1.0', '~> 0.1.0'
 
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'minitest-focus'
   s.add_development_dependency 'minitest-reporters'
-  s.add_development_dependency 'rails', '>= 4.2'
+  s.add_development_dependency 'rails', '>= 5.0'
   s.add_development_dependency 'sqlite3', '>= 1.3.6'
 end
