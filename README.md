@@ -96,10 +96,8 @@ The gem is available as open source under the terms of the
 
 [rubygems_badge]: http://img.shields.io/gem/v/pp_sql.svg
 [rubygems]: https://rubygems.org/gems/pp_sql
-[travisci_badge]: https://travis-ci.org/kvokka/pp_sql.svg?branch=master
-[travisci]: https://travis-ci.org/kvokka/pp_sql
-[codacy_badge]: https://api.codacy.com/project/badge/Grade/7c866da60b1b4dd78eacc379cc0e7f3b
-[codacy]: https://www.codacy.com/app/kvokka/pp_sql?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kvokka/pp_sql&amp;utm_campaign=Badge_Grade
+[codacy_badge]: https://app.codacy.com/project/badge/Grade/0394889311ea49529ddea12baac9b699
+[codacy]: https://www.codacy.com/gh/kvokka/pp_sql/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kvokka/pp_sql&amp;utm_campaign=Badge_Grade
 [hound_badge]: https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg
 [hound]: https://houndci.com
 
