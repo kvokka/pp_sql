@@ -1,9 +1,9 @@
 # PpSql
 
-[Version][rubygems_badge]][rubygems]
-[Build Status][travisci_badge]][travisci]
-[Codacy Badge][codacy_badge]][codacy]
-[Reviewed by Hound][hound_badge]][hound]
+[![Version               ][rubygems_badge]][rubygems]
+[![Build Status          ][travisci_badge]][travisci]
+[![Codacy Badge          ][codacy_badge]][codacy]
+[![Reviewed by Hound     ][hound_badge]][hound]
 
 Replace standard `ActiveRecord#to_sql` method with
 [`anbt-sql-formatter`][anbt-sql-formatter-link]
