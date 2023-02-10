@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module PpSql
+  WHITE_SPACE = '  '
+
   # if you do not want to rewrite AR native method #to_sql
   # you may switch this setting to false in initializer
   class << self
@@ -20,7 +22,7 @@ module PpSql
       rule = AnbtSql::Rule.new
       rule.keyword = AnbtSql::Rule::KEYWORD_UPPER_CASE
       %w[count sum substr date].each { |func_name| rule.function_names << func_name.upcase }
-      rule.indent_string = '  '
+      rule.indent_string = WHITE_SPACE
       @_sql_formatter = AnbtSql::Formatter.new(rule)
     end
   end
