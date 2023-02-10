@@ -47,12 +47,6 @@ module PpSql
     end
   end
 
-  module ToSqlBeautifyRefinement
-    refine String do
-      include PpSql::ToSqlBeautify
-    end
-  end
-
   module LogSubscriberPrettyPrint
     include Formatter
 

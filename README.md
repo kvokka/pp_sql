@@ -1,7 +1,6 @@
 # PpSql
 
 [![Version               ][rubygems_badge]][rubygems]
-[![Build Status          ][travisci_badge]][travisci]
 [![Codacy Badge          ][codacy_badge]][codacy]
 [![Reviewed by Hound     ][hound_badge]][hound]
 
@@ -34,13 +33,7 @@ You can use version `~> 0.2` of this gem with Ruby 2.2, 2.3 and/or Rails 4.0, 4.
 Post.first.to_sql
 ```
 
-for easy and clean usage with custom string you can use build-in refinement:
-
-```
-  using PpSql::ToSqlBeautifyRefinement
-```
-
-Or if you need to use it wider
+for easy and clean usage with custom string you can use:
 
 ```
 class MyAwesomeDecoratedString < String
