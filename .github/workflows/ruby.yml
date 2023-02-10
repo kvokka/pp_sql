@@ -34,7 +34,7 @@ jobs:
           - gemfiles/activerecord_6_0.gemfile
           - gemfiles/activerecord_6_1.gemfile
           - gemfiles/activerecord_7_0.gemfile
-          
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up Ruby
@@ -45,7 +45,12 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Install gems
+      env:
+        BUNDLE_GEMFILE: ${{ matrix.gemfile }}
+      run: bundle install
+
     - name: Run tests
       env:
-        BUNDLE_GEMFILE: ${{ matrix.gemfile }}   
+        BUNDLE_GEMFILE: ${{ matrix.gemfile }}
       run: bundle exec rake
