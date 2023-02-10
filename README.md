@@ -1,9 +1,9 @@
 # PpSql
 
-[![Version               ][rubygems_badge]][rubygems]
-[![Build Status          ][travisci_badge]][travisci]
-[![Codacy Badge          ][codacy_badge]][codacy]
-[![Reviewed by Hound     ][hound_badge]][hound]
+[Version][rubygems_badge]][rubygems]
+[Build Status][travisci_badge]][travisci]
+[Codacy Badge][codacy_badge]][codacy]
+[Reviewed by Hound][hound_badge]][hound]
 
 Replace standard `ActiveRecord#to_sql` method with
 [`anbt-sql-formatter`][anbt-sql-formatter-link]
@@ -22,7 +22,7 @@ Ruby 2.4+
 
 ## Rails
 
-Rails 4.2+ (optional), will be injected automatically
+Rails 5.0+ (optional), will be injected automatically
 
 ## Legacy
 
@@ -51,13 +51,15 @@ end
 ## Installation
 
 add in Gemfile
+
 ```
 gem 'pp_sql', group: :development
 ```
 
 And then execute:
+
 ```bash
-$ bundle
+bundle
 ```
 
 ## With other formatters
@@ -73,7 +75,7 @@ If you do not want to rewrite default `#to_sql` method you may specify
 You can also disable log formatting by specifying `PpSql.add_rails_logger_formatting=false`
 in initializers.
 
- ### Add to Application record
+### Add to Application record
 
 I found usefull this trick:
 
@@ -95,6 +97,7 @@ Running the tests requires sqlite. To run the tests for different combinations o
 versions, run `bundle exec appraisal install` followed by `bundle exec appraisal rake`.
 
 ## License
+
 The gem is available as open source under the terms of the
 [MIT License][mit-licence-link].
 

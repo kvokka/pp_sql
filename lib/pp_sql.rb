@@ -53,33 +53,6 @@ module PpSql
     end
   end
 
-  module Rails5PpSqlExtraction
-    # export from Rails 5 with for Rails 4.2+ versions
-
-    private
-
-    def colorize_payload_name(name, payload_name)
-      if payload_name.blank? || payload_name == 'SQL' # SQL vs Model Load/Exists
-        color(name, ActiveSupport::LogSubscriber::MAGENTA, true)
-      else
-        color(name, ActiveSupport::LogSubscriber::CYAN, true)
-      end
-    end
-
-    def sql_color(sql)
-      case sql
-      when /\A\s*rollback/mi                      then ActiveSupport::LogSubscriber::RED
-      when /select .*for update/mi, /\A\s*lock/mi then ActiveSupport::LogSubscriber::WHITE
-      when /\A\s*select/i                         then ActiveSupport::LogSubscriber::BLUE
-      when /\A\s*insert/i                         then ActiveSupport::LogSubscriber::GREEN
-      when /\A\s*update/i                         then ActiveSupport::LogSubscriber::YELLOW
-      when /\A\s*delete/i                         then ActiveSupport::LogSubscriber::RED
-      when /transaction\s*\Z/i                    then ActiveSupport::LogSubscriber::CYAN
-      else                                             ActiveSupport::LogSubscriber::MAGENTA
-      end
-    end
-  end
-
   module LogSubscriberPrettyPrint
     include Formatter
 
@@ -98,7 +71,6 @@ module PpSql
         ActiveSupport.on_load(:active_record) do
           ActiveRecord::Relation.send(:prepend, ToSqlBeautify)
           ActiveRecord::LogSubscriber.send(:prepend, LogSubscriberPrettyPrint)
-          ActiveRecord::LogSubscriber.send(:include, Rails5PpSqlExtraction) if Rails::VERSION::MAJOR <= 4
         end
       end
     end
