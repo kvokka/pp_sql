@@ -4,3 +4,5 @@ Gemfile.lock
 *.gem
 gemfiles/*.gemfile.lock
 gemfiles/.bundle/
+.tool_versions
+.ruby-version
