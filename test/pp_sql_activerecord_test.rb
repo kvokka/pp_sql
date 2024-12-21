@@ -72,7 +72,7 @@ describe PpSql do
   it 'pp_sql formats frozen strings properly' do
     PpSql.rewrite_to_sql_method = false
     User.create
-    frozen_clause = 'id > 0'.freeze
+    frozen_clause = 'id > 0'
     out, = capture_io do
       User.all.where(frozen_clause).pp_sql
     end
