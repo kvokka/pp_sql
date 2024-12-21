@@ -20,5 +20,5 @@ group :local_development do
   gem 'overcommit'
   gem 'pry'
   gem 'reek'
-  gem 'rubocop', '~> 0.71.0'
+  gem 'rubocop', '~> 1.69.0'
 end
