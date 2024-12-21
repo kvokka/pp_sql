@@ -41,7 +41,7 @@ module PpSql
         puts to_sql
       else
         extend Formatter
-        puts _sql_formatter.format(to_sql.to_s)
+        puts _sql_formatter.format(to_sql.dup)
       end
     end
   end
