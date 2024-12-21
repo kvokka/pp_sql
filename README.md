@@ -17,11 +17,11 @@ Or in console
 
 ## Require
 
-Ruby 2.4+
+Ruby 3.1+
 
 ## Rails
 
-Rails 5.0+ (optional), will be injected automatically
+Rails 7.0+ (optional), will be injected automatically
 
 ## Legacy
 
