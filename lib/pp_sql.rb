@@ -6,8 +6,7 @@ module PpSql
   # if you do not want to rewrite AR native method #to_sql
   # you may switch this setting to false in initializer
   class << self
-    attr_accessor :rewrite_to_sql_method
-    attr_accessor :add_rails_logger_formatting
+    attr_accessor :rewrite_to_sql_method, :add_rails_logger_formatting
   end
   self.rewrite_to_sql_method = true
   self.add_rails_logger_formatting = true
@@ -63,8 +62,8 @@ module PpSql
     class Railtie < Rails::Railtie
       initializer 'pp_sql.override_to_sql' do
         ActiveSupport.on_load(:active_record) do
-          ActiveRecord::Relation.send(:prepend, ToSqlBeautify)
-          ActiveRecord::LogSubscriber.send(:prepend, LogSubscriberPrettyPrint)
+          ActiveRecord::Relation.prepend ToSqlBeautify
+          ActiveRecord::LogSubscriber.prepend LogSubscriberPrettyPrint
         end
       end
     end
