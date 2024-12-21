@@ -24,6 +24,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'minitest-focus'
   s.add_development_dependency 'minitest-reporters'
-  s.add_development_dependency 'rails', '>= 5.0'
+  s.add_development_dependency 'rails', '>= 7.0'
   s.add_development_dependency 'sqlite3', '>= 1.4'
 end
