@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 3.1.0'
 
   s.add_dependency 'activerecord'
-  s.add_dependency 'anbt-sql-formatter', '~> 0.1.0', '~> 0.1.0'
+  s.add_dependency 'anbt-sql-formatter', '~> 0.1.0'
 
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'minitest-focus'
