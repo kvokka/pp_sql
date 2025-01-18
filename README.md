@@ -3,9 +3,7 @@
 [![Version               ][rubygems_badge]][rubygems]
 [![Codacy Badge          ][codacy_badge]][codacy]
 [![Reviewed by Hound     ][hound_badge]][hound]
-[![Gitsponsors           ][gitsponsors_badge]][gitsponsors]
-
-
+[<img src="https://api.gitsponsors.com/api/badge/img?id=78002099" height="20">](https://api.gitsponsors.com/api/badge/link?p=J9d+7zEGJS+BQMhX3FZDy2lWmzWp75oJZulj80NsvTrAkDEWcEC5PzkwUCDB/oqWGOfl1rwmFSi7crAJTxB6ww==)
 
 Replace standard `ActiveRecord#to_sql` method with
 [`anbt-sql-formatter`][anbt-sql-formatter-link]
@@ -111,7 +109,3 @@ The gem is available as open source under the terms of the
 
 [log-img]: https://raw.githubusercontent.com/kvokka/pp_sql/master/img/log.png
 [console-img]: https://raw.githubusercontent.com/kvokka/pp_sql/master/img/console.png
-
-[gitsponsors_badge]: https://api.gitsponsors.com/api/badge/img?id=78002099
-[gitsponsors]: https://api.gitsponsors.com/api/badge/link?p=J9d+7zEGJS+BQMhX3FZDy2lWmzWp75oJZulj80NsvTrAkDEWcEC5PzkwUCDB/oqWGOfl1rwmFSi7crAJTxB6ww==
-
