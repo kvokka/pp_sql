@@ -18,6 +18,9 @@ gemspec
 
 # https://stackoverflow.com/questions/79360526/uninitialized-constant-activesupportloggerthreadsafelevellogger-nameerror
 gem 'concurrent-ruby', '1.3.4'
+gem 'minitest'
+gem 'minitest-focus'
+gem 'minitest-reporters'
 
 group :local_development do
   gem 'appraisal'
@@ -26,9 +29,6 @@ group :local_development do
   gem 'reek'
   gem 'rubocop', '~> 1.69.0'
 
-  gem 'minitest'
-  gem 'minitest-focus'
-  gem 'minitest-reporters'
   gem 'rails', '>= 7.0'
   gem 'sqlite3', '>= 1.4'
 end
