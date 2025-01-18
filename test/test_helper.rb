@@ -6,6 +6,6 @@ require 'pp_sql'
 
 require 'minitest/reporters'
 
-::LOGGER = StringIO.new
+LOGGER = StringIO.new
 
 Minitest::Reporters.use!
