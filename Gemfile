@@ -15,10 +15,19 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 #
+
+# https://stackoverflow.com/questions/79360526/uninitialized-constant-activesupportloggerthreadsafelevellogger-nameerror
+gem 'concurrent-ruby', '1.3.4'
+gem 'minitest'
+gem 'minitest-focus'
+gem 'minitest-reporters'
+
 group :local_development do
   gem 'appraisal'
   gem 'overcommit'
   gem 'pry'
+  gem 'rails', '>= 7.0'
   gem 'reek'
   gem 'rubocop', '~> 1.69.0'
+  gem 'sqlite3', '>= 1.4'
 end

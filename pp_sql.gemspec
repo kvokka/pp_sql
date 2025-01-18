@@ -23,9 +23,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'activerecord'
   s.add_dependency 'anbt-sql-formatter', '~> 0.1.0'
 
-  s.add_development_dependency 'minitest'
-  s.add_development_dependency 'minitest-focus'
-  s.add_development_dependency 'minitest-reporters'
-  s.add_development_dependency 'rails', '>= 7.0'
-  s.add_development_dependency 'sqlite3', '>= 1.4'
+  s.metadata['rubygems_mfa_required'] = 'true'
 end

@@ -50,11 +50,11 @@ module PpSql
     include Formatter
 
     def sql(event)
-      return super event unless ::PpSql.add_rails_logger_formatting
+      return super unless ::PpSql.add_rails_logger_formatting
 
       e = event.dup
       e.payload[:sql] = _sql_formatter.format(e.payload[:sql].dup)
-      super e
+      super(e)
     end
   end
 
