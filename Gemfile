@@ -25,4 +25,10 @@ group :local_development do
   gem 'pry'
   gem 'reek'
   gem 'rubocop', '~> 1.69.0'
+
+  gem 'minitest'
+  gem 'minitest-focus'
+  gem 'minitest-reporters'
+  gem 'rails', '>= 7.0'
+  gem 'sqlite3', '>= 1.4'
 end

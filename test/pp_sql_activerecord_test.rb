@@ -8,7 +8,7 @@ module ActiveRecord
   class Base
     establish_connection(adapter: 'sqlite3', database: ':memory:')
     connection.create_table(:users) { |t| t.string :name }
-    self.logger = Logger.new(::LOGGER = StringIO.new)
+    self.logger = Logger.new(::LOGGER ||= StringIO.new)
   end
 
   class Relation
