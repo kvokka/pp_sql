@@ -2,10 +2,10 @@
 
 source "https://rubygems.org"
 
-gem "concurrent-ruby", "1.3.4"
 gem "minitest"
 gem "minitest-focus"
 gem "minitest-reporters"
+gem "tzinfo-data"
 gem "rails", "~> 8.0.0"
 gem "sqlite3", "~> 2.0"
 

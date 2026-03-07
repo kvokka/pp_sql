@@ -1,9 +1,9 @@
 # PpSql
 
-[![Version               ][rubygems_badge]][rubygems]
-[![Codacy Badge          ][codacy_badge]][codacy]
-[![Reviewed by Hound     ][hound_badge]][hound]
-[<img src="https://api.gitsponsors.com/api/badge/img?id=78002099" height="20">](https://api.gitsponsors.com/api/badge/link?p=J9d+7zEGJS+BQMhX3FZDy2lWmzWp75oJZulj80NsvTrAkDEWcEC5PzkwUCDB/oqWGOfl1rwmFSi7crAJTxB6ww==)
+[![Version][rubygems_badge]][rubygems]
+[![Codacy Badge][codacy_badge]][codacy]
+[![Reviewed by Hound][hound_badge]][hound]
+[img src="https://api.gitsponsors.com/api/badge/img?id=78002099" height="20"](https://api.gitsponsors.com/api/badge/link?p=J9d+7zEGJS+BQMhX3FZDy2lWmzWp75oJZulj80NsvTrAkDEWcEC5PzkwUCDB/oqWGOfl1rwmFSi7crAJTxB6ww==)
 
 Replace standard `ActiveRecord#to_sql` method with
 [`anbt-sql-formatter`][anbt-sql-formatter-link]
@@ -22,7 +22,7 @@ Ruby 3.1+
 
 ## Rails
 
-Rails 7.0+ (optional), will be injected automatically
+Rails / ActiveRecord 7.1+ (optional), will be injected automatically
 
 ## Legacy
 
@@ -30,13 +30,13 @@ You can use version `~> 0.2` of this gem with Ruby 2.2, 2.3 and/or Rails 4.0, 4.
 
 ## Usage
 
-```
+```text
 Post.first.to_sql
 ```
 
 for easy and clean usage with custom string you can use:
 
-```
+```text
 class MyAwesomeDecoratedString < String
   include PpSql::ToSqlBeautify
 end
@@ -46,7 +46,7 @@ end
 
 add in Gemfile
 
-```
+```text
 gem 'pp_sql', group: :development
 ```
 
@@ -73,7 +73,7 @@ in initializers.
 
 I found usefull this trick:
 
- ```
+ ```text
  class ApplicationRecord < ActiveRecord::Base
   include PpSql::ToSqlBeautify if defined?(Rails::Console)
 
@@ -87,8 +87,23 @@ end
 
 ## Contributing
 
-Running the tests requires sqlite. To run the tests for different combinations of dependency
-versions, run `bundle exec appraisal install` followed by `bundle exec appraisal rake`.
+Running the tests requires sqlite.
+
+To refresh the generated appraisal gemfiles:
+
+```bash
+bundle exec appraisal generate
+```
+
+To run the maintained dependency matrix locally:
+
+```bash
+bundle exec appraisal install
+bundle exec appraisal rake
+```
+
+GitHub Actions runs the Rails / ActiveRecord `7.1`, `7.2`, `8.0`, and `8.1`
+matrix on Ruby `3.2`, `3.3`, and `3.4`.
 
 ## License
 

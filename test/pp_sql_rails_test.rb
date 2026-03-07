@@ -11,6 +11,7 @@ ENV['RAILS_ENV'] = 'test'
 module TeatApp
   class Application < Rails::Application
     config.eager_load = false
+    config.load_defaults Gem::Version.new(Rails.version).segments.first(2).join('.').to_f
     initialize!
   end
 end

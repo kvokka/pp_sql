@@ -1,0 +1,3 @@
+[global]
+exclude = ["AGENTS.md", "GEMINI.md", "CHANGELOG.md", "prompts/", "docs/**/*"]
+disable = ["MD013", "MD033"]
