@@ -16,18 +16,17 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 #
 
-# https://stackoverflow.com/questions/79360526/uninitialized-constant-activesupportloggerthreadsafelevellogger-nameerror
-gem 'concurrent-ruby', '1.3.4'
 gem 'minitest'
 gem 'minitest-focus'
 gem 'minitest-reporters'
+gem 'tzinfo-data'
 
 group :local_development do
   gem 'appraisal'
   gem 'overcommit'
   gem 'pry'
-  gem 'rails', '>= 7.0'
+  gem 'rails', '>= 7.1'
   gem 'reek'
-  gem 'rubocop', '~> 1.69.0'
+  gem 'rubocop', '~> 1.85'
   gem 'sqlite3', '>= 1.4'
 end
