@@ -25,8 +25,8 @@ group :local_development do
   gem 'appraisal'
   gem 'overcommit'
   gem 'pry'
-  gem 'rails', '>= 7.1'
+  gem 'rails', '>= 8.0'
   gem 'reek'
   gem 'rubocop', '~> 1.85'
-  gem 'sqlite3', '>= 1.4'
+  gem 'sqlite3', '~> 2.0'
 end

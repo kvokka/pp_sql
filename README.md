@@ -18,11 +18,11 @@ Or in console
 
 ## Require
 
-Ruby 3.1+
+Ruby 3.3+
 
 ## Rails
 
-Rails / ActiveRecord 7.1+ (optional), will be injected automatically
+Rails / ActiveRecord 8.0+ (optional), will be injected automatically
 
 ## Legacy
 
@@ -102,8 +102,8 @@ bundle exec appraisal install
 bundle exec appraisal rake
 ```
 
-GitHub Actions runs the Rails / ActiveRecord `7.1`, `7.2`, `8.0`, and `8.1`
-matrix on Ruby `3.2`, `3.3`, and `3.4`.
+GitHub Actions runs the Rails / ActiveRecord `8.0` and `8.1` matrix on
+Ruby `3.3`, `3.4`, and `4.0`.
 
 ## License
 

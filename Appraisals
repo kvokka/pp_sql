@@ -7,18 +7,6 @@ skip_gems_snippet = <<~GEMS
   end
 GEMS
 
-appraise 'rails-7-1' do
-  gem 'rails', '~> 7.1.0'
-  gem 'sqlite3', '~> 2.0'
-  eval(skip_gems_snippet)
-end
-
-appraise 'rails-7-2' do
-  gem 'rails', '~> 7.2.0'
-  gem 'sqlite3', '~> 2.0'
-  eval(skip_gems_snippet)
-end
-
 appraise 'rails-8-0' do
   gem 'rails', '~> 8.0.0'
   gem 'sqlite3', '~> 2.0'
@@ -27,20 +15,6 @@ end
 
 appraise 'rails-8-1' do
   gem 'rails', '~> 8.1.0'
-  gem 'sqlite3', '~> 2.0'
-  eval(skip_gems_snippet)
-end
-
-appraise 'activerecord-7-1' do
-  gem 'activerecord', '~> 7.1.0'
-  gem 'rake'
-  gem 'sqlite3', '~> 2.0'
-  eval(skip_gems_snippet)
-end
-
-appraise 'activerecord-7-2' do
-  gem 'activerecord', '~> 7.2.0'
-  gem 'rake'
   gem 'sqlite3', '~> 2.0'
   eval(skip_gems_snippet)
 end
