@@ -105,6 +105,19 @@ bundle exec appraisal rake
 GitHub Actions runs the Rails / ActiveRecord `8.0` and `8.1` matrix on
 Ruby `3.3`, `3.4`, and `4.0`.
 
+## Releasing
+
+Bump `PpSql::VERSION`, merge it, then push the matching tag:
+
+```bash
+git tag v2.3.0
+git push origin v2.3.0
+```
+
+The `Release` workflow checks the tag against `PpSql::VERSION`, builds the gem,
+pushes it to RubyGems.org through trusted publishing and creates the GitHub
+release.
+
 ## License
 
 The gem is available as open source under the terms of the
