@@ -18,9 +18,9 @@ Gem::Specification.new do |s|
 
   s.files = Dir['lib/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  s.required_ruby_version = '>= 3.1.0'
+  s.required_ruby_version = '>= 3.3.0'
 
-  s.add_dependency 'activerecord'
+  s.add_dependency 'activerecord', '>= 8.0'
   s.add_dependency 'anbt-sql-formatter', '~> 0.1.0'
 
   s.metadata['rubygems_mfa_required'] = 'true'
