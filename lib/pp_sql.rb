@@ -6,10 +6,11 @@ module PpSql
   # if you do not want to rewrite AR native method #to_sql
   # you may switch this setting to false in initializer
   class << self
-    attr_accessor :rewrite_to_sql_method, :add_rails_logger_formatting
+    attr_accessor :rewrite_to_sql_method, :add_rails_logger_formatting, :enable_for_rails_rake_db_tasks
   end
   self.rewrite_to_sql_method = true
   self.add_rails_logger_formatting = true
+  self.enable_for_rails_rake_db_tasks = ENV.fetch('PPSQL_ENABLE_FOR_RAILS_RAKE_DB_TASKS', false)
 
   module Formatter
     private
@@ -65,6 +66,11 @@ module PpSql
           ActiveRecord::Relation.prepend ToSqlBeautify
           ActiveRecord::LogSubscriber.prepend LogSubscriberPrettyPrint
         end
+      end
+
+      rake_tasks do
+        path = File.expand_path(__dir__)
+        Dir.glob("#{path}/pp_sql/tasks/**/*.rake").each { |f| load f } unless PpSql.enable_for_rails_rake_db_tasks
       end
     end
   end

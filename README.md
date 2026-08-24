@@ -69,6 +69,12 @@ If you do not want to rewrite default `#to_sql` method you may specify
 You can also disable log formatting by specifying `PpSql.add_rails_logger_formatting=false`
 in initializers.
 
+By default, PpSql will not format any logs during any rails tasks that begin
+with `db:`, such as `db:migrate`. However, if you want formatted logs during db
+tasks you can opt in by passing in the environment var
+`PPSQL_ENABLE_FOR_RAILS_RAKE_DB_TASKS`. For example,
+`PPSQL_ENABLE_FOR_RAILS_RAKE_DB_TASKS=1 rails db:migrate`.
+
 ### Add to Application record
 
 I found usefull this trick:
